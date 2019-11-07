@@ -1,0 +1,11 @@
+{
+  "name": "wp-media-center",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A modern media library for WordPress.",
+  "scripts": {
+    "start:wordpress": "docker-compose up -d",
+    "stop:wordpress": "docker-compose down"
+  },
+  "license": "GPLv2"
+}
