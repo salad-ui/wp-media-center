@@ -38,6 +38,7 @@
     "start:wordpress": "docker-compose up -d",
     "stop:wordpress": "docker-compose down",
     "build:app": "webpack --mode=production",
+    "build": "yarn run build:app",
     "test:app": "jest",
     "test": "yarn run test:app"
   },
