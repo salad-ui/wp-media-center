@@ -31,7 +31,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "format": "prettier --write '**/*.{json,js,ts,tsx,md}'",
+    "formating": "prettier --write '**/*.{json,js,ts,tsx,md}'",
     "linting": "eslint --ext .ts,.tsx --fix ./app",
     "typing": "tsc --project tsconfig.json",
     "start:app": "webpack-dev-server",

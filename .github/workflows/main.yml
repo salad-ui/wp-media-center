@@ -1,0 +1,31 @@
+name: main
+
+on: [push, pull_request]
+
+jobs:
+  all-the-things:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - uses: actions/checkout@v1
+
+      - name: ⬇️ Installing...
+        run: yarn install --frozen-lockfile
+
+      - name: 🏗 Building
+        run: yarn run build
+
+      - name: ☑️ Typing...
+        run: yarn run typing
+
+      - name: ☑️ Linting...
+        run: yarn run linting
+
+      - name: ☑️ Formatting...
+        run: yarn run prettier check '**/*.{json,js,ts,tsx,md}'
+
+      - name: ☑️ Testing...
+        run: yarn run test
