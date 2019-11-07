@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: 🥗 Clone salad-ui...
-        run: cd .. && git clone https://${GITHUB_TOKEN}@github.com/salad-ui/components.git
+        run: cd .. && git clone https://${GITHUB_TOKEN}@github.com/salad-ui/components.git && pwd && ls -la
 
-      - name: Cache node modules
+      - name: 🧠 Caching dependencies
         uses: actions/cache@v1
         with:
           path: node_modules
@@ -25,7 +25,7 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
 
-      - name: ⬇️ Installing...
+      - name: ⬇️ Installing dependencies...
         run: yarn install --frozen-lockfile
 
       - name: 🏗 Building
