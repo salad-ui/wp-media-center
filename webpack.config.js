@@ -1,16 +1,16 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: {
     chooser: './app/chooser/index.tsx',
-    manager: './app/manager/index.tsx'
+    manager: './app/manager/index.tsx',
   },
   output: {
-    path: `${__dirname}/plugin/static`
+    path: `${__dirname}/plugin/static`,
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
@@ -18,22 +18,22 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
-      }
-    ]
+          loader: 'babel-loader',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './app/chooser/index.html',
       filename: './chooser/index.html',
-      excludeChunks: ['manager']
+      excludeChunks: ['manager'],
     }),
     new HtmlWebpackPlugin({
       template: './app/manager/index.html',
       filename: './manager/index.html',
-      excludeChunks: ['chooser']
+      excludeChunks: ['chooser'],
     }),
-    new ForkTsCheckerWebpackPlugin()
-  ]
-}
+    new ForkTsCheckerWebpackPlugin(),
+  ],
+};

@@ -27,10 +27,12 @@ To develop the plugin within WordPress:
 
 1. Run `yarn start:wordpress`
 
-    > Make sure you have [`docker`](https://docs.docker.com/docker-for-mac/install/) installed!
+   > Make sure you have [`docker`](https://docs.docker.com/docker-for-mac/install/) installed!
 
 2. Browse to `http://localhost:8000/`
 3. Setup WordPress and log in:
-  - username: `admin`
-  - password: `admin`
+
+- username: `admin`
+- password: `admin`
+
 4. Go to the plugins page and enable the plugin
