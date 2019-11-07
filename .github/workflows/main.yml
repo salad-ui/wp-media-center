@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: 🥗 Clone salad-ui...
-        run: cd .. && git clone https://${GITHUB_TOKEN}@github.com/salad-ui/components.git && pwd && ls -la
+        run: cd .. && git clone https://${GITHUB_TOKEN}@github.com/salad-ui/components.git && pwd && ls -la && ls -la /home/runner/work/wp-media-center/wp-media-center/../components/packages/typography/src
 
       - name: 🧠 Caching dependencies
         uses: actions/cache@v1
