@@ -16,6 +16,8 @@ A modern media library for WordPress.
 yarn
 ```
 
+> Make sure you've already checked out `@salad-ui/components` in the parent directory because we're linking to the local checkout of `@salad-ui/components` while it remains heavily unstable.
+
 ### Development
 
 To develop the UI by itself:

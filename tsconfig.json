@@ -4,7 +4,11 @@
     "noEmit": true,
     "lib": ["dom", "esnext"],
     "jsx": "react",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@salad-ui/*": ["../components/packages/*/src"]
+    }
   },
   "include": ["app", "typings"]
 }

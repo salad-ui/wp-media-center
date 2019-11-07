@@ -1,6 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+console.log({
+  '@salad-ui/typography': `${__dirname}/../components/packages/typography/src/index.tsx`,
+});
+
 module.exports = {
   entry: {
     chooser: './app/chooser/index.tsx',
@@ -11,6 +15,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@salad-ui/typography': `${__dirname}/../components/packages/typography/src`,
+    },
   },
   module: {
     rules: [
