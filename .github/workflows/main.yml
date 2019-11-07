@@ -12,8 +12,8 @@ jobs:
 
       - uses: actions/checkout@v1
 
-        # - name: 🥗 Clone salad-ui...
-        run: cd .. && git clone https://github.com/salad-ui/components.git
+      - name: 🥗 Clone salad-ui...
+        run: cd .. && git clone https://${GITHUB_TOKEN}@github.com/salad-ui/components.git
 
       - name: Cache node modules
         uses: actions/cache@v1
