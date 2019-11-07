@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
@@ -14,9 +15,11 @@ module.exports = {
     path: `${__dirname}/plugin/static`,
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.tsx', '.js'],
     alias: {
-      '@salad-ui/typography': `${__dirname}/../components/packages/typography/src`,
+      '@salad-ui/typography': path.resolve(
+        `${__dirname}/../components/packages/typography/src`,
+      ),
     },
   },
   module: {
