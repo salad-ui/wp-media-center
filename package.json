@@ -12,13 +12,17 @@
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@jameslnewell/babel-preset": "^2.0.0",
+    "@jameslnewell/typescript-config": "^3.0.0",
     "babel-loader": "^8.0.6",
+    "fork-ts-checker-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
+    "typing": "tsc --project tsconfig.json",
     "start:app": "webpack-dev-server",
     "start:wordpress": "docker-compose up -d",
     "stop:wordpress": "docker-compose down",

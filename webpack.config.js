@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -33,5 +34,6 @@ module.exports = {
       filename: './manager/index.html',
       excludeChunks: ['chooser']
     }),
+    new ForkTsCheckerWebpackPlugin()
   ]
 }
