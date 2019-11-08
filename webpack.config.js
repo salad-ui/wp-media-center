@@ -9,7 +9,7 @@ module.exports = {
     manager: './app/manager/index.tsx',
   },
   output: {
-    path: `${__dirname}/plugin/static`,
+    path: path.resolve(__dirname, `plugin/static`),
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
@@ -39,12 +39,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './app/chooser/index.html',
-      filename: './chooser/index.html',
+      filename: './chooser.html',
       excludeChunks: ['manager'],
     }),
     new HtmlWebpackPlugin({
       template: './app/manager/index.html',
-      filename: './manager/index.html',
+      filename: './manager.html',
       excludeChunks: ['chooser'],
     }),
     new ForkTsCheckerWebpackPlugin(),
