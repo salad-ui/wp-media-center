@@ -1,10 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
-console.log({
-  '@salad-ui/typography': `${__dirname}/../components/packages/typography/src/index.tsx`,
-});
+const RegExpAliasResolverPlugin = require('./webpack-regexp-alias-resolver-plugin');
 
 module.exports = {
   entry: {
@@ -16,11 +13,17 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
-    alias: {
-      '@salad-ui/typography': path.resolve(
-        `${__dirname}/../components/packages/typography/src`,
+    // alias: {
+    //   '@salad-ui/typography': path.resolve(
+    //     `${__dirname}/../components/packages/typography/src`,
+    //   ),
+    // },
+    plugins: [
+      new RegExpAliasResolverPlugin(
+        /^@salad-ui\/(.+)/,
+        path.resolve(`${__dirname}/../components/packages/$1/src`),
       ),
-    },
+    ],
   },
   module: {
     rules: [
