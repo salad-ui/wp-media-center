@@ -13,11 +13,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
-    // alias: {
-    //   '@salad-ui/typography': path.resolve(
-    //     `${__dirname}/../components/packages/typography/src`,
-    //   ),
-    // },
+    alias: {
+      react: require.resolve('react'),
+      'react-dom': require.resolve('react-dom'),
+      'styled-components': require.resolve('styled-components'),
+    },
     plugins: [
       new RegExpAliasResolverPlugin(
         /^@salad-ui\/(.+)/,
