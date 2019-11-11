@@ -8,7 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@salad-ui/*": ["../components/packages/*/src"]
-    }
+    },
+    "skipLibCheck": true
   },
   "include": ["app", "typings"]
 }
