@@ -19,7 +19,7 @@ const getFileFromInput = (input: HTMLInputElement | null): File | undefined => {
   return file;
 };
 
-export const MediaUpload = () => {
+export const MediaUpload: React.FC = () => {
   const media = useMedia();
   const fileInput = React.useRef<HTMLInputElement>(null);
   const [upload, , {isPending, isFulfilled, error}] = useInvokablePromise(
@@ -27,7 +27,7 @@ export const MediaUpload = () => {
     [],
   );
 
-  const handleUpload = (event: React.FormEvent) => {
+  const handleUpload = (event: React.FormEvent): void => {
     event.preventDefault();
     const file = getFileFromInput(fileInput.current);
     if (file) {

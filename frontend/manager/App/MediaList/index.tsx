@@ -4,7 +4,7 @@ import {useMedia} from '@api';
 import {MediaListItem} from './MediaListItem';
 import {List} from './index.styles';
 
-export const MediaList = () => {
+export const MediaList: React.FC = () => {
   const media = useMedia();
   const [items] = usePromise(() => media.list(), []);
   return (

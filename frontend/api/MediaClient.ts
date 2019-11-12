@@ -3,7 +3,7 @@ export interface MediaClientOptions {
   nonce: string;
 }
 
-export interface ListItem {
+export interface MediaItem {
   id: number;
   title: string;
   filename: string;
@@ -31,7 +31,7 @@ export interface ListItem {
   };
 }
 
-const getDataOrThrow = (json: any) => {
+const getDataOrThrow = (json: any): any => {
   if (json.success) {
     return json.data;
   } else {
@@ -48,13 +48,13 @@ export class MediaClient {
     this.nonce = options.nonce;
   }
 
-  private async request(path: string, data: FormData) {
+  private async request(path: string, data: FormData): Promise<any> {
     const res = await fetch(`${this.url}${path}`, {method: 'POST', body: data});
     const json = await res.json();
     return json;
   }
 
-  public async list(): Promise<ListItem[]> {
+  public async list(): Promise<MediaItem[]> {
     const data = new FormData();
     data.append('action', 'query-attachments');
     data.append('post_id', '0');
@@ -66,7 +66,7 @@ export class MediaClient {
     return getDataOrThrow(json);
   }
 
-  public async upload(name: string, file: File) {
+  public async upload(name: string, file: File): Promise<MediaItem> {
     // TODO: return observable with progress
     const data = new FormData();
     data.append('name', name);
@@ -77,7 +77,7 @@ export class MediaClient {
     return getDataOrThrow(json);
   }
 
-  public async delete(id: number, nonce?: string) {
+  public async delete(id: number, nonce?: string): Promise<void> {
     const data = new FormData();
     data.append('action', 'delete-post');
     data.append('id', String(id));

@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import * as React from 'react';
 import {render, waitForDomChange} from '@testing-library/react';
 import {ThemeProvider} from '@salad-ui/theme';
-import {MediaClient, MediaProvider, ListItem} from '@api';
+import {MediaClient, MediaProvider, MediaItem} from '@api';
 import {MediaList} from '.';
 
 const client = new MediaClient({nonce: 'foobar'});
@@ -16,7 +17,7 @@ const renderMediaList = () =>
   );
 
 describe('MediaList', () => {
-  let listSpy = jest.spyOn(client, 'list');
+  const listSpy = jest.spyOn(client, 'list');
 
   beforeEach(() => {
     listSpy.mockClear();
@@ -36,7 +37,7 @@ describe('MediaList', () => {
               url: 'http://example.com/example-1.jpg',
             },
           },
-        } as any) as ListItem,
+        } as unknown) as MediaItem,
         ({
           id: 2,
           sizes: {
@@ -46,7 +47,7 @@ describe('MediaList', () => {
               url: 'http://example.com/example-2.jpg',
             },
           },
-        } as any) as ListItem,
+        } as unknown) as MediaItem,
         ({
           id: 3,
           sizes: {
@@ -56,7 +57,7 @@ describe('MediaList', () => {
               url: 'http://example.com/example-3.jpg',
             },
           },
-        } as any) as ListItem,
+        } as unknown) as MediaItem,
       ]),
     );
     const {container} = renderMediaList();

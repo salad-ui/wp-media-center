@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {useInvokablePromise} from '@jameslnewell/react-promise';
 import {Button} from '@salad-ui/button';
-import {useMedia, ListItem as ListItemResponse} from '@api';
+import {useMedia, MediaItem} from '@api';
 import {ListItem} from './MediaListItem.styles';
 
 export interface MediaListItemProps {
-  item: ListItemResponse;
+  item: MediaItem;
 }
 
 export const MediaListItem: React.FC<MediaListItemProps> = ({item}) => {

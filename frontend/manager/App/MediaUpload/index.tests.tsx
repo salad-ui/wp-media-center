@@ -1,13 +1,15 @@
 import * as React from 'react';
 import {render, waitForDomChange, fireEvent} from '@testing-library/react';
 import {ThemeProvider} from '@salad-ui/theme';
-import {MediaClient, MediaProvider} from '@api';
+import {MediaClient, MediaProvider, MediaItem} from '@api';
 import {MediaUpload} from '.';
 
 const client = new MediaClient({nonce: 'foobar'});
 
 class ErrorSilencer extends React.Component {
-  componentDidCatch() {}
+  componentDidCatch() {
+    // intentionally silencing errors
+  }
   render() {
     return this.props.children;
   }
@@ -42,14 +44,14 @@ const submitForm = (form: HTMLFormElement | null) => {
 };
 
 describe('MediaUpload', () => {
-  let uploadSpy = jest.spyOn(client, 'upload');
+  const uploadSpy = jest.spyOn(client, 'upload');
 
   beforeEach(() => {
     uploadSpy.mockClear();
   });
 
   test('should render a message when the upload has been successful', async () => {
-    uploadSpy.mockImplementation(() => Promise.resolve({}));
+    uploadSpy.mockImplementation(() => Promise.resolve({} as MediaItem));
     const {container, getByText} = renderMediaUpload();
     const form = container.querySelector('form');
     const fileInput = container.querySelector('input');

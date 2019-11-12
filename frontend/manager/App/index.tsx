@@ -4,7 +4,7 @@ import {MediaList} from './MediaList';
 import {MediaUpload} from './MediaUpload';
 import {Wrapper} from './index.styles';
 
-export const App = () => {
+export const App: React.FC = () => {
   return (
     <Wrapper>
       <Title size="medium">Media Library</Title>

@@ -43,8 +43,8 @@
     "wordpress:stop": "docker-compose down",
     "wordpress:logs": "docker-compose logs --follow",
     "clean": "rm -rf plugin/static",
-    "formating": "prettier --write '**/*.{json,js,ts,tsx,md}'",
-    "linting": "eslint --ext .ts,.tsx --fix ./app",
+    "formatting": "prettier --write '**/*.{json,js,ts,tsx,md}'",
+    "linting": "eslint --ext .ts,.tsx --fix ./frontend",
     "typing": "tsc --project tsconfig.json",
     "build": "yarn run frontend:build",
     "test": "yarn run frontend:test"
