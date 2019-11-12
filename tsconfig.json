@@ -7,9 +7,11 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
+      "@api": ["frontend/api"],
+      "@api/*": ["frontend/api/*"],
       "@salad-ui/*": ["../components/packages/*/src"]
     },
     "skipLibCheck": true
   },
-  "include": ["app", "typings"]
+  "include": ["frontend/**/*.ts", "frontend/**/*.tsx", "typings/**/*.d.ts"]
 }

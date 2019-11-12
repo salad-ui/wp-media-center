@@ -4,11 +4,15 @@
   "version": "0.1.0",
   "description": "A modern media library for WordPress.",
   "dependencies": {
+    "@jameslnewell/observable": "^1.2.4",
+    "@jameslnewell/react-observable": "^2.0.0-preview.9",
+    "@jameslnewell/react-promise": "^3.3.0",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
     "@types/styled-components": "^4.1.22",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "rxjs": "^6.5.3",
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
@@ -27,22 +31,26 @@
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^2.0.1",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "formating": "prettier --write '**/*.{json,js,ts,tsx,md}'",
-    "linting": "eslint --ext .ts,.tsx --fix ./app",
+    "frontend:start": "webpack-dev-server",
+    "frontend:build": "webpack --mode=production",
+    "frontend:test": "jest",
+    "frontend:test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "wordpress:start": "docker-compose up -d",
+    "wordpress:stop": "docker-compose down",
+    "wordpress:logs": "docker-compose logs --follow",
+    "clean": "rm -rf plugin/static",
+    "formatting": "prettier --write '**/*.{json,js,ts,tsx,md}'",
+    "linting": "eslint --ext .ts,.tsx --fix ./frontend",
     "typing": "tsc --project tsconfig.json",
-    "start:app": "webpack-dev-server",
-    "start:wordpress": "docker-compose up -d",
-    "stop:wordpress": "docker-compose down",
-    "build:app": "webpack --mode=production",
-    "build": "yarn run build:app",
-    "test:app": "jest",
-    "test": "yarn run test:app"
+    "build": "yarn run frontend:build",
+    "test": "yarn run frontend:test"
   },
   "husky": {
     "hooks": {

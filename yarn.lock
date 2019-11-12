@@ -809,10 +809,27 @@
     eslint-plugin-react "^7.16.0"
     eslint-plugin-react-hooks "^2.1.2"
 
+"@jameslnewell/observable@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@jameslnewell/observable/-/observable-1.2.4.tgz#888b47b001a22c893fd91a864ed95c9575911231"
+  integrity sha512-N80izVY5Pq+3bC88tMIFyWi/A4QSTtkjWzROjDzin0znnVXOWc1bnC/7zT5eoXaUBvnTGxojkwE9TxAAUharJg==
+
 "@jameslnewell/prettier-config@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@jameslnewell/prettier-config/-/prettier-config-1.0.1.tgz#5bd6b247198d7a6148a1a605c9ff94ce51f3da1a"
   integrity sha512-GeiPM7JhbZuFx2gjoZh1jB6tk8atEdS529Bqbweo/exSAaESW/7jsqJ5rkDy1Trm31dYQnQG0ef1EBmtWxixdg==
+
+"@jameslnewell/react-observable@^2.0.0-preview.9":
+  version "2.0.0-preview.9"
+  resolved "https://registry.yarnpkg.com/@jameslnewell/react-observable/-/react-observable-2.0.0-preview.9.tgz#802aae20eeb435ddea5fa93cae488d5af13ff9db"
+  integrity sha512-dGQDWG787xNP7+wSwuJEm9U2+V1RW9GI+ef0LdXp3hRsYYis2lnYqy66YDsKj4IZb8ZRmH0hOYsIhlcJBNfrLA==
+  dependencies:
+    "@jameslnewell/observable" "^1.2.4"
+
+"@jameslnewell/react-promise@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@jameslnewell/react-promise/-/react-promise-3.3.0.tgz#8174095ac28ffc6d9938265ed1e020c617fcdbdb"
+  integrity sha512-qxov9i5DT9FufOuzPNtQVq8HwEGFKFR2jYt3k8dqRc5X+f3ZJ1K9NPXxrxxVqn77m0W5tDMsYHJeR6Ct7aQuGA==
 
 "@jameslnewell/typescript-config@^3.0.0":
   version "3.0.0"
@@ -2105,7 +2122,7 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.1, chalk@^2.4.2:
+chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"
   integrity sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
@@ -2896,7 +2913,7 @@ enhanced-resolve@4.1.0:
     memory-fs "^0.4.0"
     tapable "^1.0.0"
 
-enhanced-resolve@^4.1.0:
+enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.1.1.tgz#2937e2b8066cd0fe7ce0990a98f0d71a35189f66"
   integrity sha512-98p2zE+rL7/g/DzMHMTF4zZlCgeVdJ7yr6xzEpJRYwFYrGi9ANdn5DnJURg6RpBkyk60XYDnWIv51VfIhfNGuA==
@@ -6820,7 +6837,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.4.0:
+rxjs@^6.4.0, rxjs@^6.5.3:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.3.tgz#510e26317f4db91a7eb1de77d9dd9ba0a4899a3a"
   integrity sha512-wuYsAYYFdWTAnAaPoKGNhfpWwKZbJW+HgAJ+mImp+Epl7BG8oNWBCTyRM8gba9k4lk8BgWdoYm21Mo/RYhhbgA==
@@ -7632,7 +7649,16 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
-tsconfig-paths@^3.6.0:
+tsconfig-paths-webpack-plugin@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths-webpack-plugin/-/tsconfig-paths-webpack-plugin-3.2.0.tgz#6e70bd42915ad0efb64d3385163f0c1270f3e04d"
+  integrity sha512-S/gOOPOkV8rIL4LurZ1vUdYCVgo15iX9ZMJ6wx6w2OgcpT/G4wMyHB6WM+xheSqGMrWKuxFul+aXpCju3wmj/g==
+  dependencies:
+    chalk "^2.3.0"
+    enhanced-resolve "^4.0.0"
+    tsconfig-paths "^3.4.0"
+
+tsconfig-paths@^3.4.0, tsconfig-paths@^3.6.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.9.0.tgz#098547a6c4448807e8fcb8eae081064ee9a3c90b"
   integrity sha512-dRcuzokWhajtZWkQsDVKbWyY+jgcLC5sqJhg2PSgf4ZkH2aHPvaOY8YWGhmjb68b5qqTfasSsDO9k7RUiEmZAw==

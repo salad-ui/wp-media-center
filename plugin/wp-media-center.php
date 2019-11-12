@@ -12,12 +12,13 @@ $environment = isset($_ENV['WP_MEDIA_CENTER_ENVIRONMENT']) ? $_ENV['WP_MEDIA_CEN
 $isDevelopment = $environment === 'development' ? true : false;
 
 function render_manager_page() {
+  echo '<script>var nonce = '.json_encode(wp_create_nonce('media-form')).'</script>';
   echo('<div id="wp-media-center__manager-app"></div>');
 }
 
 function add_manager_scripts() {
   global $isDevelopment;
-  $url = $isDevelopment ? 'http://localhost:8081/manager.js' : plugin_dir_url(__FILE__).'static/manager.js';
+  $url = $isDevelopment ? 'http://localhost:9000/manager.js' : plugin_dir_url(__FILE__).'static/manager.js';
   wp_enqueue_script('wp-media-center', $url, array(), null, true); 
 }
 

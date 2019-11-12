@@ -25,12 +25,12 @@ yarn
 
 To develop the UI by itself:
 
-1. Run `yarn start:app`
-2. Browse to `http://localhost:8081/chooser` or `http://localhost:8081/manager`
+1. Run `yarn frontend:start`
+2. Browse to `http://localhost:9000/chooser` or `http://localhost:9000/manager`
 
 To develop the plugin within WordPress:
 
-1. Run `yarn start:wordpress`
+1. Run `yarn wordpress:start`
 
    > Make sure you have [`docker`](https://docs.docker.com/docker-for-mac/install/) installed!
 
