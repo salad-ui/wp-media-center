@@ -809,10 +809,22 @@
     eslint-plugin-react "^7.16.0"
     eslint-plugin-react-hooks "^2.1.2"
 
+"@jameslnewell/observable@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@jameslnewell/observable/-/observable-1.2.4.tgz#888b47b001a22c893fd91a864ed95c9575911231"
+  integrity sha512-N80izVY5Pq+3bC88tMIFyWi/A4QSTtkjWzROjDzin0znnVXOWc1bnC/7zT5eoXaUBvnTGxojkwE9TxAAUharJg==
+
 "@jameslnewell/prettier-config@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@jameslnewell/prettier-config/-/prettier-config-1.0.1.tgz#5bd6b247198d7a6148a1a605c9ff94ce51f3da1a"
   integrity sha512-GeiPM7JhbZuFx2gjoZh1jB6tk8atEdS529Bqbweo/exSAaESW/7jsqJ5rkDy1Trm31dYQnQG0ef1EBmtWxixdg==
+
+"@jameslnewell/react-observable@^2.0.0-preview.9":
+  version "2.0.0-preview.9"
+  resolved "https://registry.yarnpkg.com/@jameslnewell/react-observable/-/react-observable-2.0.0-preview.9.tgz#802aae20eeb435ddea5fa93cae488d5af13ff9db"
+  integrity sha512-dGQDWG787xNP7+wSwuJEm9U2+V1RW9GI+ef0LdXp3hRsYYis2lnYqy66YDsKj4IZb8ZRmH0hOYsIhlcJBNfrLA==
+  dependencies:
+    "@jameslnewell/observable" "^1.2.4"
 
 "@jameslnewell/react-promise@^3.3.0":
   version "3.3.0"
@@ -6825,7 +6837,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.4.0:
+rxjs@^6.4.0, rxjs@^6.5.3:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.3.tgz#510e26317f4db91a7eb1de77d9dd9ba0a4899a3a"
   integrity sha512-wuYsAYYFdWTAnAaPoKGNhfpWwKZbJW+HgAJ+mImp+Epl7BG8oNWBCTyRM8gba9k4lk8BgWdoYm21Mo/RYhhbgA==

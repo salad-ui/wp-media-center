@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import * as React from 'react';
+import {of} from 'rxjs';
+import {delay} from 'rxjs/operators';
 import {render, waitForDomChange} from '@testing-library/react';
 import {ThemeProvider} from '@salad-ui/theme';
 import {MediaClient, MediaProvider, MediaItem} from '@api';
@@ -27,7 +29,7 @@ describe('MediaList', () => {
 
   test('shows a list of items when the items have been fetched', async () => {
     listSpy.mockImplementation(() =>
-      Promise.resolve([
+      of([
         ({
           id: 1,
           sizes: {
@@ -58,7 +60,7 @@ describe('MediaList', () => {
             },
           },
         } as unknown) as MediaItem,
-      ]),
+      ]).pipe(delay(100)),
     );
     const {container} = renderMediaList();
     await waitForDomChange();

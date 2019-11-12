@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {usePromise} from '@jameslnewell/react-promise';
-import {useMedia} from '@api';
+import {useObservable} from '@jameslnewell/react-observable';
+import {useMedia, MediaItem} from '@api';
 import {MediaListItem} from './MediaListItem';
 import {List} from './index.styles';
 
 export const MediaList: React.FC = () => {
   const media = useMedia();
-  const [items] = usePromise(() => media.list(), []);
+  const [items] = useObservable<MediaItem[]>(() => media.list() as any, []);
   return (
     <List>
       {items && items.map(item => <MediaListItem key={item.id} item={item} />)}
